@@ -2,7 +2,7 @@ from flask import Flask, send_from_directory
 
 app = Flask(__name__)
 
-@app.route('/<path:path>')
+@app.route('/static/<path:path>')
 def index(path):
     return send_from_directory("static", path)
 
