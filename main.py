@@ -26,7 +26,7 @@ def send_tweet():
         api.update_status(tweet)
         return render_template('sent.html', message='Your tweet has been posted!')
     except Exception as e:
-        return render_template('sent.html', message="An error has occured: you've most likely already sent an identical tweet")
+        return render_template('sent.html', message="An error has occured: you've most likely already sent an identical tweet or have inserted invalid twitter tokens and keys")
 
 if __name__ == '__main__':
     app.run(debug=True)
