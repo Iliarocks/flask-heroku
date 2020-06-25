@@ -31,9 +31,10 @@ try {
     if (tweetToSend === '' || accessTokenSecret === '' || consumerSecret === '' || accessToken === '' || accessTokenSecret === '') return;
     fetch(`${window.origin}/send-tweet?tweet=${tweetToSend}&consumer-key=${consumerKey}&consumer-secret=${consumerSecret}&access-token=${accessToken}&access-token-secret=${accessTokenSecret}`)
       .then(() => {
-        tweetBox.value === ''
+        tweetBox.value = '';
         setKeysTokens()
       })
+      .catch(err => alert(err.message))
   })
 } catch (e) {
   goHomeBtn.addEventListener('click', function(e) {
