@@ -7,11 +7,12 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 .tweet-div {
   height: 300px;
   width: 500px;
-  margin: 100px auto;
+  margin: 300px auto;
 }
 #tweet-box {
   color: #2d2e2f;
@@ -25,7 +26,7 @@ body {
   resize: none;
   margin-bottom: 10px;
 }
-#tweet {
+button {
   outline: none;
   border: none;
   background: #1da1f2;
@@ -37,6 +38,18 @@ body {
   cursor: pointer;
   font-weight: 800;
 }
-#tweet:hover {
+button:hover {
   transform: scale(1.08);
+}
+.prompt {
+  width: 100%;
+  text-align: center;
+  margin-top: 300px;
+}
+#sent-title {
+  font-size: 28px;
+}
+#go-home {
+   width: 85px;
+   margin: 25px auto;
 }

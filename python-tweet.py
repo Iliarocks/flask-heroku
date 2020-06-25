@@ -17,7 +17,7 @@ api = tweepy.API(oauth)
 tweet = raw_input('Tweet: ')
 check = raw_input('Are you sure you want to tweet "' + tweet + '"(y/N)')
 if check == 'y':
-    api.update_status(tweet)
+    api.update_status()
     print('a tweet has been posted')
 else:
     print('your tweet has been cancelled')
