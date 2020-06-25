@@ -1,11 +1,8 @@
 from flask import Flask, render_template, request
 import tweepy
 import os
-consumer_key = 'dRzzqvP2ronqIe3lSiOHg3hLC'
-consumer_secret = '3Qw3dffDyUHPRirNgBzmNMjTIAmuoXTf3Y5y6mpvNixPHu9h6C'
-access_token = '1163471772722847748-7IiOpJNJMCg9EQiKTX2eD4ihdMpmLc'
-access_token_secret = 'xelpYWILujObf4Ec5zTN2FS80ANxpQgqe1DBzrbWLVJRy'
-def OAuth():
+
+def OAuth(consumer_key, consumer_secret, access_token, access_token_secret):
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     return auth
@@ -18,7 +15,11 @@ def tweet():
 
 @app.route('/send-tweet')
 def send_tweet():
-    oauth = OAuth()
+    consumer_key = request.args.get('consumer-key')
+    consumer_secret = request.args.get('consumer-secret')
+    access_token = request.args.get('access-token')
+    access_token_secret = request.args.get('access-token-secret')
+    oauth = OAuth(consumer_key, consumer_secret, access_token, access_token_secret)
     api = tweepy.API(oauth)
     tweet = request.args.get('tweet')
     try:

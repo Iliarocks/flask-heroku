@@ -9,10 +9,14 @@
 </head>
 
 <body>
-  <div class="tweet-div">
-    <textarea id="tweet-box" name="name" rows="8" cols="80" placeholder="Tweet..."></textarea>
+  <form class="tweet-div">
+    <input type="text" id="consumer-key" placeholder="Consumer key...">
+    <input type="text" id="consumer-secret" placeholder="Consumer secret...">
+    <input type="text" id="access-token" placeholder="Access token...">
+    <input type="text" id="access-token-secret" placeholder="Access token secret...">
+    <textarea id="tweet-box" name="name" rows="8" cols="80" placeholder="Tweet something..."></textarea>
     <button id="tweet" type="button" name="button">Tweet</button>
-  </div>
+  </form>
   <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 
